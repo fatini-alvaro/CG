@@ -19,7 +19,7 @@ VERDE = (0, 255, 0)
 AMARELO = (255, 255, 0)
 
 raio = 25
-cor_circulo = BRANCO
+cor_circulo = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 circulo_pos = [largura // 2, altura // 2]
 
 clock = pygame.time.Clock()
@@ -49,22 +49,22 @@ while True:
     if circulo_pos[0] + raio >= largura:
         velocidade_x = -velocidade_x
         velocidade_y = random.randint(-1, 1)
-        cor_circulo = VERMELHO        
+        cor_circulo = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))       
 
     if circulo_pos[0] - raio <= 0:
         velocidade_x = -velocidade_x
         velocidade_y = random.randint(-1, 1)
-        cor_circulo = VERDE
+        cor_circulo = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     if circulo_pos[1] + raio >= altura:
         velocidade_y = -velocidade_y
         velocidade_x = random.randint(-1, 1)
-        cor_circulo = AZUL
+        cor_circulo = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     if circulo_pos[1] - raio <= 0:
         velocidade_y = -velocidade_y
         velocidade_x = random.randint(-1, 1)
-        cor_circulo = AMARELO
+        cor_circulo = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
     
     clock.tick(300)
     tela.fill(PRETO)
