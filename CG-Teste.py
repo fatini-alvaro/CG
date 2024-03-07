@@ -24,9 +24,6 @@ circulo_pos = [largura // 2, altura // 2]
 
 clock = pygame.time.Clock()
 
-# velocidade_x = 1
-# velocidade_y = 1
-
 velocidade_x = random.randint(-1, 1)
 velocidade_y = random.randint(-1, 1)
 
