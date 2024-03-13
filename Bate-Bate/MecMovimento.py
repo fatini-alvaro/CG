@@ -26,22 +26,22 @@ class MovendoTexto:
     if self.rect.left <= 0:
       self.velocidade_x = random.randint(0,1)
       self.velocidade_y = random.randint(-1, 1)
-      self.change_color(self)
+      self.change_color()
 
     if self.rect.right >= self.largura:
       self.velocidade_x = random.randint(-1,0)
       self.velocidade_y = random.randint(-1, 1)
-      self.change_color(self)
+      self.change_color()
 
     if self.rect.top <= 0:
       self.velocidade_x = random.randint(-1, 1)
       self.velocidade_y = random.randint(0, 1)
-      self.change_color(self)
+      self.change_color()
 
     if self.rect.bottom >= self.altura:
       self.velocidade_x = random.randint(-1, 1)
       self.velocidade_y = random.randint(-1, 0)
-      self.change_color(self)
+      self.change_color()
 
   def change_color(self):
     color_texto = (

@@ -19,12 +19,12 @@ class Game:
         if evento.type == pygame.QUIT:
           rodando = False
 
-        self.MovendoTexto.move()
-        self.tela.fill(0, 0, 0)
-        self.tela.blit(self.MovendoTexto.texto_surf, 
-                       self.MovendoTexto.rect)
-        pygame.display.flip()
-        self.clock.tick(60)
+      self.MovendoTexto.move()
+      self.tela.fill((0, 0, 0))
+      self.tela.blit(self.MovendoTexto.texto_surf, 
+                      self.MovendoTexto.rect)
+      pygame.display.flip()
+      self.clock.tick(60)
         
     pygame.quit
     sys.exit()
