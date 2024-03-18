@@ -7,8 +7,8 @@ class MovendoTexto:
     self.texto = texto
     self.largura = largura
     self.altura = altura
-    self.texto_surf = self.font.render(texto, True, (255, 255, 255))
-    self.rect = self.texto_surf.get_rect(center=(largura/2, altura/2))
+    self.texto_surf = self.font.render(texto, True, (255, 255, 255))  # Renderiza o texto com a fonte e a cor especificadas
+    self.rect = self.texto_surf.get_rect(center=(largura/2, altura/2))  # Obtém o retângulo que envolve o texto e o posiciona no centro da janela
 
     self.velocidade_x = self.gerrar_numero_nao_zero()
     self.velocidade_y = self.gerrar_numero_nao_zero()
@@ -23,6 +23,7 @@ class MovendoTexto:
     self.rect.x += self.velocidade_x
     self.rect.y += self.velocidade_y
 
+    # Verifica se o texto atingiu os limites da janela e ajusta as velocidades e a cor do texto
     if self.rect.left <= 0:
       self.velocidade_x = random.randint(0,1)
       self.velocidade_y = random.randint(-1, 1)
@@ -49,4 +50,4 @@ class MovendoTexto:
       random.randint(0, 255),
       random.randint(0, 255)
     )
-    self.texto_surf = self.font.render(self.texto, True, color_texto)
+    self.texto_surf = self.font.render(self.texto, True, color_texto) # Renderiza o texto com a nova cor
