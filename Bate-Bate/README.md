@@ -1,4 +1,5 @@
 # Bate-Bate
 
-![GraficoClassesCg](assets/CLasseCG.pdf)
+Este é um gráfico das classes contidas no projeto:
+
 ![GraficoClassesCgPng](assets/CLasseCG.png)
