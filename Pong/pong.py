@@ -1,6 +1,7 @@
 import random  # Importa o módulo random para gerar números aleatórios
 import sys  # Importa o módulo sys para lidar com funcionalidades do sistema
-import pygame  # Importa a biblioteca Pygame para desenvolvimento de jogos em Python
+import pygame  # Importa a biblioteca Pygame para desenvolvimento de jogos em Pythone
+from pygame import mixer
 
 
 pygame.init() # Inicializa o Pygame
@@ -38,6 +39,11 @@ rodando = True # Variável para controlar o loop principal do jogo
 font_file = 'font/PressStart2P-Regular.ttf' #Passa o caminho do arquivo para uma variavel
 font = pygame.font.Font(font_file, 20)
 
+#Definir Sons
+mixer.music.load("audios/music_game.mp3")
+mixer.music.play(-1)
+som = mixer.Sound("audios/Sound_A.wav")
+
 clock = pygame.time.Clock()  # Cria um objeto Clock para controlar a taxa de atualização da tela
 
 # Metodo que inicializa o jogo, espera por comandos e mostra informações em tela
@@ -60,7 +66,7 @@ def menu_principal():
         screen.blit(texto_menu, text_menu_rect)
 
         tempo = pygame.time.get_ticks() #retorna o número de milissegundos desde que o Pygame foi inicializado.
-        
+
         #Pressiona Space para jogar
         #Isso aqui gera um looping  infinito  por conta da logica impregada        
         # tempo % 2000 calcula o resto da divisão de tempo por 2000. Isso basicamente cria um ciclo de 2000 milissegundos (ou 2 segundos).
@@ -141,6 +147,7 @@ while rodando:  # Loop principal do jogo que roda enquanto a variável "rodando"
 
         # Colisão da bola com a raquete do pc ou do player
         if bola_rect.colliderect(raquete_pc_rect) or bola_rect.colliderect(raquete_player_1_rect): #validacao quando a bolinha bate na raquete do pc ou do player 1
+            som.play()
             velocidade_bola_x = -velocidade_bola_x #inverte o valor da velocidade em x para ela tomar o rumo oposto
 
         # Trata a colisão da bola com a borda de cima e de baixo da tela
