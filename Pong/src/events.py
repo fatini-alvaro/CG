@@ -4,10 +4,12 @@ from pygame import mixer
 import sys
 import random  # Importa o módulo random para gerar números aleatórios
 
+mixer.init()
+
 # #Definir Sons
-# mixer.music.load("audios/music_game.mp3")
-# mixer.music.play(-1)
-# som = mixer.Sound("audios/Sound_A.wav")
+mixer.music.load("audios/music_game.mp3")
+mixer.music.play(-1)
+som = mixer.Sound("audios/Sound_A.wav")
 
 class Events:
     def __init__(self, larguraTela, alturaTela, corBranco, corPreto, font_file, font, dificuldade):
@@ -161,7 +163,7 @@ class Events:
             self.bola_falsa = False
 
     def logica_colisao_com_raquete(self):
-        # som.play()
+        som.play()
         self.velocidade_bola_x = -self.velocidade_bola_x #inverte o valor da velocidade em x para ela tomar o rumo oposto
         self.cor_bola = random.choice(self.cores)  # Muda a cor da bola
         # 20% de chance da bola ficar invisível
